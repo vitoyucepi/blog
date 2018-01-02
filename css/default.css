@@ -67,5 +67,6 @@ body {
     padding: 30px;
 }
 #post img {
-    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
