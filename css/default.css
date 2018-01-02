@@ -66,7 +66,7 @@ body {
     display: flex;
 }
 
-#post-list {
+#postlist {
     flex-grow: 2;
     background: #FFF;
 }
@@ -100,3 +100,5 @@ body {
 .fa {
     padding-right: 3px;
 }
+
+#postlist #postitem

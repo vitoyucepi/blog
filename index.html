@@ -2,7 +2,10 @@
 layout: main
 ---
 {% for post in site.posts %}
-    {{ post.date {{ page.date | date: "%d %B %Y" }}
-    {{ post.author }}
-    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
+    <div class="postitem">
+        <div id="author"><i class="fa fa-user"></i>{{ post.author }}</div>
+        <div id="date"><i class="fa fa-calendar"></i>{{ post.date | date: "%d %B %Y" }}</div>
+        <img src="{{ site.baseurl }}/{{ post.image }}">
+        <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
+    </div>
 {% endfor %}
