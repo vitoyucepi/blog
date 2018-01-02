@@ -66,3 +66,6 @@ body {
     background: #FFF;
     padding: 22px;
 }
+#post img {
+    width: 100%;
+}
