@@ -37,4 +37,5 @@ html, body {
 	min-height: 100px;
 	max-width: 1152px;
 	min-width: 240px;
+	margin: 0 auto;
 }
