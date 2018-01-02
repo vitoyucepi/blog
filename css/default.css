@@ -6,16 +6,13 @@ html, body {
 
 body {
     display: flex;
-    flex-direction: column;
-    /*    align-items: center;
-        justify-content: center;*/
+    flex-flow: row wrap;
     background: #eee
 }
 
 #header {
-    width: 100%;
+    flex: 1 100%;
     background: #222;
-    align-self: start;
 }
 
 #header div {
@@ -35,10 +32,9 @@ body {
 }
 
 #footer {
-    width: 100%;
+    flex: 1 100%;
     background: #FFF;
     margin-top: 30px;
-    align-self: end;
 }
 
 #footer div {
@@ -54,12 +50,10 @@ body {
 }
 
 #page {
-    margin-top: 30px;
+    margin: 30px auto 0 auto;
     max-width: 1152px;
     min-width: 240px;
-    flex-grow: 1;
-    align-self: center;
-    flex-direction: row;
+    flex: 1 100%;
 }
 
 #container {
@@ -67,12 +61,12 @@ body {
 }
 
 #postlist {
-    flex-grow: 2;
+    flex: 1 200%;
     background: #FFF;
 }
 
 #sidebar {
-    flex-grow: 1;
+    flex: 1 100%;
 }
 
 #post {
@@ -104,4 +98,8 @@ body {
 .postitem a {
     text-decoration: none;
     color: #0274BE;
+}
+
+.postitem {
+    margin: 30px 30px 0 30px;
 }
