@@ -2,7 +2,7 @@
 layout: main
 ---
 {% if site.posts | size == 0 %}
-    {% capture deafult_post %}{% include defaultpost.md %}{% endcapture %}
+    {% capture default_post %}{% include defaultpost.md %}{% endcapture %}
     {{ default_post | markdownify }}
 {% else %}
     {% for post in site.posts %}
