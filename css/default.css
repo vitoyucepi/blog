@@ -52,7 +52,7 @@ body {
 }
 
 #container {
-    margin: 30px auto 0 auto;
+    margin: 30px auto;
     max-width: 1152px;
     min-width: 240px;
     display: flex;
@@ -69,6 +69,9 @@ body {
 }
 
 #post {
+    margin: 30px auto;
+    max-width: 1152px;
+    min-width: 240px;
     background: #FFF;
     padding: 30px;
 }
