@@ -23,14 +23,14 @@ body {
 }
 #header a {
 	text-decoration: none;
-	color: #fff;
+	color: #FFF;
 }
 #header h2 {
 	margin: 0;
 }
 #footer {
 	width: 100%;
-	background: #fff;
+	background: #FFF;
 	margin-top: 30px;
 	align-self: end;
 }
@@ -50,4 +50,15 @@ body {
 	min-width: 240px;
 	flex-grow: 1;
 	align-self: center;
+	display: flex;
+	flex-direction: row;
+}
+#post-list {
+	flex-grow: 2;
+	background: #FFF
+}
+#sidebar {
+	flex-grow: 1;
+}
+#post {
 }
