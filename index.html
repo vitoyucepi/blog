@@ -5,9 +5,15 @@ layout: main
     <div class="postitem">
         <div class="postheader">
             <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a></h1>
-            <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
+            <a href="{{ site.baseurl | append: post.url }}">
+                <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
+            </a>
             <div class="postauthor"><i class="fa fa-user"></i>{{ post.author }}</div>
             <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%d %B %Y" }}</div>
         </div>
+        <div class="postcontent">
+            {{ post.pretext | strip }} ...
+        </div>
+        <a href="{{ site.baseurl | append: post.url }}">Подробнее...</a>
     </div>
 {% endfor %}
