@@ -80,15 +80,15 @@ body {
     padding: 30px;
 }
 
-#post h1 {
-    margin-bottom: 12px;
+.postheader h1 {
+    margin: 0 0 12px 0;
 }
 
-#post img {
+.postheader img {
     max-width: 400px;
 }
 
-#post #postheader {
+.postheader {
     margin-bottom: 30px;
 }
 
