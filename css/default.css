@@ -57,10 +57,12 @@ body {
 }
 #post-list {
     flex-grow: 2;
-    background: #FFF
+    background: #FFF;
 }
 #sidebar {
     flex-grow: 1;
 }
 #post {
+    background: #FFF;
+    padding: 22px;
 }
