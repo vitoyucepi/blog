@@ -3,9 +3,11 @@ layout: main
 ---
 {% for post in site.posts %}
     <div class="postitem">
-        <div id="author"><i class="fa fa-user"></i>{{ post.author }}</div>
-        <div id="date"><i class="fa fa-calendar"></i>{{ post.date | date: "%d %B %Y" }}</div>
-        <img src="{{ site.baseurl }}/{{ post.image }}">
-        <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
+        <div class="postheader">
+            <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a></h1>
+            <div class="postauthor"><i class="fa fa-user"></i>{{ post.author }}</div>
+            <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%d %B %Y" }}</div>
+            <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
+        </div>
     </div>
 {% endfor %}

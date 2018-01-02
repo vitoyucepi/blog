@@ -92,7 +92,7 @@ body {
     margin-bottom: 30px;
 }
 
-#post #postheader div {
+.postheader div {
     display: inline;
     padding-right: 22px;
 }
@@ -101,4 +101,7 @@ body {
     padding-right: 3px;
 }
 
-#postlist #postitem
+.postitem a {
+    text-decoration: none;
+    color: #0274BE;
+}
