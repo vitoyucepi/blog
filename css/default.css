@@ -50,8 +50,10 @@ body {
 	min-width: 240px;
 	flex-grow: 1;
 	align-self: center;
-	display: flex;
 	flex-direction: row;
+}
+#container {
+	display: flex;
 }
 #post-list {
 	flex-grow: 2;
