@@ -80,6 +80,10 @@ body {
     padding: 30px;
 }
 
+#post h1 {
+    margin-bottom: 12px;
+}
+
 #post img {
     max-width: 400px;
 }
