@@ -1,6 +1,7 @@
 html, body {
 	padding: 0;
 	margin: 0;
+	background: #eee
 }
 #header {
 	width: 100%;
@@ -19,6 +20,7 @@ html, body {
 #footer {
 	width: 100%;
 	background: #fff;
+	margin-top: 30px;
 }
 #footer a {
 	text-decoration: none;
@@ -27,4 +29,8 @@ html, body {
 	min-width: 240px;
 	padding: 22px 0;
 	margin: 0 auto;
+}
+#page {
+	max-width: 1152px;
+	min-width: 240px;
 }
