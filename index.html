@@ -1,8 +1,7 @@
 ---
 layout: main
 ---
-{{ site.posts | size }}
-{% if site.posts | size == 0 %}
+{% if site.posts == empty %}
     {% capture default_post %}{% include defaultpost.md %}{% endcapture %}
     <div class="postitem">
         {{ default_post | markdownify }}
