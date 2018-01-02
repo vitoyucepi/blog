@@ -2,9 +2,13 @@
 layout: default
 ---
 <div id="post">
-<img src="{{ site.baseurl }}/{{ page.image }}">
-<h1>{{ page.title }}</h1>
-<div>{{ page.author }}</div>
-<div>{{ page.date | date_to_string }}</div>
-    {{ content }}
+    <div id="postheader">
+        <img src="{{ site.baseurl }}/{{ page.image }}">
+        <h1>{{ page.title }}</h1>
+        <div id="author"><i class="fa fa-user"></i>{{ page.author }}</div>
+        <div id="date"><i class="fa fa-calendar"></i>{{ page.date | date: "%d %B %Y" }}</div>
+    </div>
+    <div id="postcontent">
+        {{ content }}
+    </div>
 </div>

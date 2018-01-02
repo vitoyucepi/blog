@@ -2,7 +2,7 @@
 layout: main
 ---
 {% for post in site.posts %}
-    {{ post.date | date_to_string }}
+    {{ post.date {{ page.date | date: "%d %B %Y" }}
     {{ post.author }}
     <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
 {% endfor %}

@@ -3,47 +3,56 @@ html, body {
     margin: 0;
     height: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
-/*    align-items: center;
-    justify-content: center;*/
+    /*    align-items: center;
+        justify-content: center;*/
     background: #eee
 }
+
 #header {
     width: 100%;
     background: #222;
     align-self: start;
 }
+
 #header div {
     max-width: 1152px;
     min-width: 240px;
     padding: 22px 0;
     margin: 0 auto;
 }
+
 #header a {
     text-decoration: none;
     color: #FFF;
 }
+
 #header h2 {
     margin: 0;
 }
+
 #footer {
     width: 100%;
     background: #FFF;
     margin-top: 30px;
     align-self: end;
 }
+
 #footer div {
     max-width: 1152px;
     min-width: 240px;
     padding: 22px 0;
     margin: 0 auto;
 }
+
 #footer a {
     text-decoration: none;
     color: #0274BE;
 }
+
 #page {
     margin-top: 30px;
     max-width: 1152px;
@@ -52,21 +61,30 @@ body {
     align-self: center;
     flex-direction: row;
 }
+
 #container {
     display: flex;
 }
+
 #post-list {
     flex-grow: 2;
     background: #FFF;
 }
+
 #sidebar {
     flex-grow: 1;
 }
+
 #post {
     background: #FFF;
     padding: 30px;
 }
+
 #post img {
     max-width: 400px;
-    margin: 0 auto;
+}
+
+#post #postheader div {
+    display: inline;
+    padding-right: 22px;
 }
