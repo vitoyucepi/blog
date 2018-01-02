@@ -1,7 +1,7 @@
 ---
 layout: main
 ---
-{% if site.posts | size == 1 %}
+{% if site.posts | size == 0 %}
     {% capture deafult_post %}{% include a_markdown_file.md %}{% endcapture %}
     {{ default_post | markdownify }}
 {% else %}
