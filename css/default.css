@@ -84,7 +84,15 @@ body {
     max-width: 400px;
 }
 
+#post #postheader {
+    margin-bottom: 30px;
+}
+
 #post #postheader div {
     display: inline;
     padding-right: 22px;
+}
+
+.fa {
+    padding-right: 3px;
 }
