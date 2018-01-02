@@ -2,6 +2,7 @@
 layout: main
 ---
 {% for post in site.posts %}
-	{{ post.date | date_to_string }}
-	<a href="{{ site.baseurl | append: post.url }}">
+    {{ post.date | date_to_string }}
+    {{ post.author }}
+    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
 {% endfor %}
