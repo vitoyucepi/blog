@@ -10,17 +10,19 @@ layout: main
     {% for post in site.posts %}
         {% if site.data.comments[post.slug] %}
             {% assign commentsQuantity = site.data.comments[post.slug].size %}
+            {% case commentsQuantity | modulo:10 %}
+            {% when 1 %}
+                {% assign result = commentsQuantity | append: " коментарий" %}
+            {% when 2 or 3 or 4 %}
+                {% assign result = commentsQuantity | append: " коментария" %}
+            {% else %}
+                {% assign result = commentsQuantity | append: " коментариев" %}
+            {% endcase %}
+
         {% else %}
-            {% assign commentsQuantity = 0 %}
+            {% assign result = "Коментариев нет" %}
         {% endif %}
-        {% case commentsQuantity | modulo:10 %}
-        {% when 1 %}
-            {% assign commentsWord = "коментариев" %}
-        {% when 2 or 3 or 4 %}
-            {% assign commentsWord = "коментария" %}
-        {% else %}
-            {% assign commentsWord = "коментариев" %}
-        {% endcase %}
+
         <div class="postitem">
             <div class="postheader">
                 <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a></h1>
