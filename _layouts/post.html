@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign comments = site.data.comments[page.slug] | where_exp:"item" %}
+{% assign comments = site.data.comments[page.slug] %}
 {% if comments %}
     {% assign commentsQuantity = comments.size %}
     {% case commentsQuantity | modulo:10 %}
@@ -34,6 +34,7 @@ layout: default
                 </pre>
                 {% for comment in comments %}
                     <div class="comment">
+                        {{ comment | inspect }}
                         {{ comment.message }}
                         {{ comment.name }}
                         {{ comment.email }}
