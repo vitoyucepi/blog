@@ -9,9 +9,9 @@ layout: main
 {% else %}
     {% for post in site.posts %}
         {% if site.data.comments[post.slug] %}
-            {% assign commentsQuantity = 0 %}
-        {% else %}
             {% assign commentsQuantity = site.data.comments[post.slug].size %}
+        {% else %}
+            {% assign commentsQuantity = 0 %}
         {% endif %}
         {% case commentsQuantity | modulo:10 %}
         {% when 1 %}
