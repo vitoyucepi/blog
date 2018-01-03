@@ -29,7 +29,7 @@ layout: default
         <div id="postcomments">
             <h1>{{ result }}</h1>
             {% if comments %}
-                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.replying_to == empty or item.replying_to == false" %}
+                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "true" %}
                 {{ comments | inspect }}
                 {% for comment in comments %}
                     <div class="comment">
