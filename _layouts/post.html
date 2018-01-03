@@ -29,7 +29,7 @@ layout: default
         <div id="postcomments">
             <h1>{{ result }}</h1>
             {% if comments %}
-                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == false or item.reply_to == empty" | sort: 'timestamp' %}
+                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == nil" | sort: 'timestamp' %}
                 {% for comment in comments %}
                     <div class="comment">
                         {{ comment.message }}
