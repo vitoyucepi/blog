@@ -32,7 +32,7 @@ layout: default
                 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == nil" | sort: 'timestamp' %}
                 {% for comment in comments %}
                     <div class="comment">
-                        <img class="avatar" src="https://www.gravatar.com/avatar/{{ comment.email | default: '2ae66f90b7788ab8950e8f81b829c947' }}?d=mm&s=60" />
+                        <img class="avatar" src="https://www.gravatar.com/avatar/{{ comment.email | default: '' }}?s=80&d=monsterid" />
                         <div class="commentauthor">{{ comment.name | default: "Аноним" }}</div>
                         <div class="commentdate">{{ comment.timestamp | date: "%d %B %Y" }}</div>
                         <div class="commentmessage">{{ comment.message }}</div>
