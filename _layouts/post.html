@@ -30,10 +30,8 @@ layout: default
             <h1>{{ result }}</h1>
             {% if comments %}
                 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "true" %}
-                {{ comments | inspect }}
                 {% for comment in comments %}
                     <div class="comment">
-                        {{ comment | inspect }}
                         {{ comment.message }}
                         {{ comment.name }}
                         {{ comment.email }}
