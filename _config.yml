@@ -1,2 +1,4 @@
 baseurl: ""
 
+plugins:
+  - file_exists
