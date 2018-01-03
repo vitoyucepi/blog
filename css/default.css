@@ -161,7 +161,7 @@ body {
 }
 
 .comment > img {
-    height: fit-content;
+    height: 80px;
     margin: 7px 12px 0 0;
 }
 
@@ -174,7 +174,9 @@ body {
     font-weight: bold;
 }
 
+/*noinspection CssOverwrittenProperties*/
 .commentmessage {
+    word-break: break-all;
     /*noinspection CssInvalidPropertyValue*/
     word-break: break-word;
 }
