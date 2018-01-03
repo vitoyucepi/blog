@@ -154,3 +154,7 @@ body {
 #comment-form > button:hover {
     background: #222;
 }
+
+.comment {
+    margin: 30px;
+}

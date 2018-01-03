@@ -1,6 +1,20 @@
 ---
 layout: default
 ---
+{% assign comments = site.data.comments[post.slug] %}
+{% if comments %}
+    {% assign commentsQuantity = comments.size %}
+    {% case commentsQuantity | modulo:10 %}
+    {% when 1 %}
+        {% assign result = commentsQuantity | append: " комментарий" %}
+    {% when 2 or 3 or 4 %}
+        {% assign result = commentsQuantity | append: " комментария" %}
+    {% else %}
+        {% assign result = commentsQuantity | append: " комментариев" %}
+    {% endcase %}
+{% else %}
+    {% assign result = "Комментариев нет" %}
+{% endif %}
 <div id="container">
     <div id="post">
         <div class="postheader">
@@ -13,6 +27,18 @@ layout: default
             {{ content }}
         </div>
         <div id="postcomments">
+            <h1>{{ result }}</h1>
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="comment">
+                        {{ comment.message }}
+                        {{ comment.name }}
+                        {{ comment.email }}
+                        {{ comment.timestamp }}
+                        {{ comment._id }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <h1>Комментировать</h1>
             <form id="comment-form" method="post" action="https://api.staticman.net/v2/entry/vitoyucepi/vitoyucepi.github.io/master/comments">
                 <textarea placeholder="Текст комментария" rows="6" name="fields[message]" required spellcheck="true"></textarea>
