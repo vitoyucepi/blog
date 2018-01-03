@@ -68,7 +68,7 @@ body {
 
 #sidebar {
     flex: 1 100%;
-    margin-left: 30px;
+    margin: 0 30px;
 }
 
 #post {
@@ -119,4 +119,13 @@ body {
 .sidebaritem {
     background: #FFF;
     padding: 30px;
+}
+
+.sidebaritem > h1,
+.sidebaritem > h2,
+.sidebaritem > h3,
+.sidebaritem > h4,
+.sidebaritem > h5,
+.sidebaritem > h6 {
+    margin-top: 0;
 }
