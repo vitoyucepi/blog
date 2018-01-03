@@ -1,4 +1,4 @@
 baseurl: ""
 
 plugins:
-  - file_exists
+  - jekyll-if-file-exists

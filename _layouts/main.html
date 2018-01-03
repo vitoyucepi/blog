@@ -5,12 +5,12 @@ layout: default
     <div id="postlist">
         {{ content }}
     </div>
-    {% capture updates_block %}{% file_exists _includes/updates.md %}{% endcapture %}
-    {{ updates_block }}
-    {% if false %}
+    {% iffileexists _includes/updates.md %}
     <div id="sidebar">
         {% capture updates %}{% include updates.md %}{% endcapture %}
         {{ updates | markdownify }}
     </div>
+    {% else %}
+    False
     {% endif %}
 </div>
