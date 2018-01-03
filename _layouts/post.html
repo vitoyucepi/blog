@@ -18,8 +18,7 @@ layout: default
                 <textarea placeholder="Текст комментария" rows="6" name="fields[message]" required spellcheck="true"></textarea>
                 <input placeholder="Имя" type="text" name="fields[name]" spellcheck="false">
                 <input placeholder="E-mail (укажите эл. почту или jabber для отображения уникального аватара)" type="text" name="fields[email]" spellcheck="false">
-                <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
-                <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
+                <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
                 <input type="hidden" name="options[slug]" value="{{ page.slug }}">
                 <button type="submit">Отправить</button>
             </form>
