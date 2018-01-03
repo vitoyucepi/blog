@@ -157,4 +157,24 @@ body {
 
 .comment {
     margin: 30px;
+    display: flex;
+}
+
+.comment > img {
+    height: fit-content;
+    margin: 7px 12px 0 0;
+}
+
+.commentbody {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.commentauthor {
+    margin-right: 3px;
+}
+
+.commentmessage {
+    flex: 1 100%;
+    align-self: flex-end;
 }

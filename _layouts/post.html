@@ -33,9 +33,11 @@ layout: default
                 {% for comment in comments %}
                     <div class="comment">
                         <img class="avatar" src="https://www.gravatar.com/avatar/{{ comment.email | default: '' }}?s=80&d=monsterid" />
-                        <div class="commentauthor">{{ comment.name | default: "Аноним" }}</div>
-                        <div class="commentdate">{{ comment.timestamp | date: "%d %B %Y" }}</div>
-                        <div class="commentmessage">{{ comment.message }}</div>
+                        <div class="commentbody">
+                            <div class="commentauthor">{{ comment.name | default: "Аноним" }}</div>
+                            <div class="commentdate">{{ comment.timestamp | date: "%d %B %Y" }}</div>
+                            <div class="commentmessage">{{ comment.message }}</div>
+                        </div>
                     </div>
                 {% endfor %}
             {% endif %}
