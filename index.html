@@ -8,7 +8,11 @@ layout: main
     </div>
 {% else %}
     {% for post in site.posts %}
-        {% assign commentsQuantity = site.data.comments[post.slug].size %}
+        {% if site.data.comments[post.slug] == empty %}
+            {% assign commentsQuantity = 0 %}
+        {% else %}
+            {% assign commentsQuantity = site.data.comments[post.slug].size %}
+        {% endif %}
         {% case commentsQuantity | modulo:10 %}
         {% when 1 %}
             {% assign commentsWord = "коментариев" %}
