@@ -8,11 +8,21 @@ layout: main
     </div>
 {% else %}
     {% for post in site.posts %}
+        {% assign commentsQuantity = site.data.comments[page.slug].size %}
+        {% case commentsQuantity | modulo:10 %}
+        {% when 1 %}
+            {% assign commentsWord = "Коментариев" %}
+        {% when 2 or 3 or 4 %}
+            {% assign commentsWord = "Коментария" %}
+        {% else %}
+            {% assign commentsWord = "Коментариев" %}
+        {% endcase %}
         <div class="postitem">
             <div class="postheader">
                 <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a></h1>
                 <div class="postauthor"><i class="fa fa-user"></i>{{ post.author }}</div>
                 <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%d %B %Y" }}</div>
+                <div class="postcomments"><i class="fa fa-comments"></i>{{ commentsQuantity }} {{ commentsWord }}</div>
                 <a href="{{ site.baseurl | append: post.url }}">
                     <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
                 </a>
