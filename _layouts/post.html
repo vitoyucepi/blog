@@ -12,5 +12,15 @@ layout: default
         <div id="postcontent">
             {{ content }}
         </div>
+        <div id="postcomments">
+            <h1>Комментировать</h1>
+            <form id="comment-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.repository }}/{{ site.staticman.branch }}/comments">
+                <textarea placeholder="Текст комментария" rows="6" name="fields[message]" required spellcheck="true"></textarea>
+                <input placeholder="Имя" type="text" name="fields[name]" spellcheck="false">
+                <input placeholder="E-mail (укажите эл. почту или jabber для отображения уникального аватара)" type="text" name="fields[email]" spellcheck="false">
+                <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
     </div>
 </div>
