@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign comments = site.data.comments[post.slug] %}
+{% assign comments = site.data.comments[page.slug] %}
 {% if comments %}
     {% assign commentsQuantity = comments.size %}
     {% case commentsQuantity | modulo:10 %}
