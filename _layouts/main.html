@@ -6,7 +6,7 @@ layout: default
         {{ content }}
     </div>
     <div id="sidebar">
-        {% if exists "_inludes/updates.md" %}
+        {% if exists updates.md %}
             {% capture updates %}{% include updates.md %}{% endcapture %}
             {{ updates | markdownify }}
         {% endif %}
