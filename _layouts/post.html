@@ -29,7 +29,9 @@ layout: default
         <div id="postcomments">
             <h1>{{ result }}</h1>
             {% if comments %}
-                {{ comments | inspect }}
+                <pre>
+                    {{ comments | inspect }}
+                </pre>
                 {% for comment in comments %}
                     <div class="comment">
                         {{ comment.message }}
