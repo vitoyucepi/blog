@@ -7,7 +7,8 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background: #eee
+    background: #eee;
+    font-family: sans-serif;
 }
 
 #header {
@@ -139,6 +140,7 @@ body {
     margin: 12px 0;
     padding: 12px;
     border: 1px solid #E4E4E4;
+    font-size: 14px;
 }
 
 #comment-form > button {
