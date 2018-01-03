@@ -166,15 +166,15 @@ body {
 }
 
 .commentbody {
-    display: flex;
-    flex-flow: row wrap;
+    flex: 1 100%;
 }
 
-.commentauthor {
-    margin-right: 3px;
+.commentauthor,
+.commentdate {
+    display: inline;
 }
+
 
 .commentmessage {
     flex: 1 100%;
-    align-self: flex-end;
 }
