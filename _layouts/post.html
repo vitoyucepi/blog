@@ -12,7 +12,6 @@ layout: default
     {% else %}
         {% assign result = commentsQuantity | append: " комментариев" %}
     {% endcase %}
-    {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.replying_to == blank" %}
 {% else %}
     {% assign result = "Комментариев нет" %}
 {% endif %}
@@ -30,7 +29,8 @@ layout: default
         <div id="postcomments">
             <h1>{{ result }}</h1>
             {% if comments %}
-                    {{ comments | inspect }}
+                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.replying_to == empty or item.replying_to == false" %}
+                {{ comments | inspect }}
                 {% for comment in comments %}
                     <div class="comment">
                         {{ comment | inspect }}
