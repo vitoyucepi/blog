@@ -165,16 +165,16 @@ body {
     margin: 7px 12px 0 0;
 }
 
-.commentbody {
-    flex: 1 100%;
-}
-
 .commentauthor,
 .commentdate {
     display: inline;
 }
 
+.commentauthor {
+    font-weight: bold;
+}
 
 .commentmessage {
-    flex: 1 100%;
+    /*noinspection CssInvalidPropertyValue*/
+    word-break: break-word;
 }
