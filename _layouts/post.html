@@ -29,16 +29,16 @@ layout: default
         <div id="postcomments">
             <h1>{{ result }}</h1>
             {% if comments %}
-                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == nil" | sort: 'timestamp' %}
+                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == nil or item.reply_to != nil and item.reply_to == empty" | sort: 'timestamp' %}
                 {% for comment in comments %}
                     <div class="comment">
-                        <img class="avatar" src="https://www.gravatar.com/avatar/{{ comment.email | default: '' }}?s=80&d=monsterid" />
+                        <img class="avatar" src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=80&d=monsterid" />
                         <div class="commentbody">
                             <div class="commentheader">
-                                <div class="commentauthor">{{ comment.name | default: "Аноним" }}</div>
-                                <div class="commentdate">{{ comment.timestamp | date: "%d %B %Y" }}</div>
+                                <div class="commentauthor">{{ comment.name | default: "Аноним" | escape }}</div>
+                                <div class="commentdate">{{ comment.timestamp | date: "%d %B %Y" | escape }}</div>
                             </div>
-                            <div class="commentmessage">{{ comment.message }}</div>
+                            <div class="commentmessage">{{ comment.message | escape }}</div>
                         </div>
                     </div>
                 {% endfor %}
