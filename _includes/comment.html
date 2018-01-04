@@ -33,7 +33,7 @@ subcomments size: {{ comments.size }} <br />
 comment end <br />
 <br />
 {% if comments.size > 0 %}
-test sub
+test sub <br />
     {% for comment in comments %}
         subid: {{ id }} <br />
         subcomment: {{ comment | inspect }} <br />
@@ -44,6 +44,8 @@ test sub
         {% assign timestamp=comment.timestamp %}
         {% assign message=comment.message %}
         {% assign replty_to=comment.reply_to }%
+        include begin <br />
         {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to=id %}
+        include end <br />
     {% endfor %}
 {% endif %}
