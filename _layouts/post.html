@@ -29,7 +29,7 @@ layout: default
         <div id="postcomments">
             <h1>{{ result }}</h1>
             {% if comments %}
-                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == nil or item.reply_to != nil and item.reply_to == empty" | sort: 'timestamp' %}
+                {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == nil or item.reply_to != nil" | sort: 'timestamp' %}
                 {% for comment in comments %}
                     <div class="comment">
                         <img class="avatar" src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=80&d=monsterid" />
