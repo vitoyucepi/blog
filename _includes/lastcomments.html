@@ -1,4 +1,4 @@
-{% assign comments = [] %}
+{% assign comments = "" | split: "," %}
 {{ comments | inspect }}
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
