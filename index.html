@@ -23,8 +23,8 @@ layout: main
         {% endif %}
         <div class="postitem">
             <div class="postheader">
-                <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a></h1>
-                <div class="postauthor"><i class="fa fa-user"></i>{{ post.author }}</div>
+                <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title | escape }}</a></h1>
+                <div class="postauthor"><i class="fa fa-user"></i>{{ post.author | escape }}</div>
                 <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%e %B %Y" }}</div>
                 <div class="postcomments"><i class="fa fa-comments"></i>{{ result }}</div>
                 <a href="{{ site.baseurl | append: post.url }}">
@@ -32,7 +32,7 @@ layout: main
                 </a>
             </div>
             <div class="postcontent">
-                {{ post.pretext | strip }} ...
+                {{ post.pretext | strip | escape }} ...
             </div>
             <a href="{{ site.baseurl | append: post.url }}">Подробнее...</a>
         </div>

@@ -20,7 +20,7 @@ layout: default
         <div class="postheader">
             <img class="postimage" src="{{ site.baseurl }}/{{ page.image }}">
             <h1>{{ page.title }}</h1>
-            <div class="postauthor"><i class="fa fa-user"></i>{{ page.author }}</div>
+            <div class="postauthor"><i class="fa fa-user"></i>{{ page.author | escape }}</div>
             <div class="postdate"><i class="fa fa-calendar"></i>{{ page.date | date: "%e %B %Y" }}</div>
         </div>
         <div id="postcontent">
