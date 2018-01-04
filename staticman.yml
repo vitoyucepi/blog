@@ -3,6 +3,7 @@ comments:
     - "name"
     - "email"
     - "message"
+    - "reply_to"
   branch: "master"
   commitMessage: "Add Staticman data"
   filename: "entry{@timestamp}"

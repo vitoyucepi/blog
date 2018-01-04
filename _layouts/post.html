@@ -50,6 +50,7 @@ layout: default
                 <input placeholder="E-mail (укажите эл. почту или jabber для отображения уникального аватара)" type="text" name="fields[email]" spellcheck="false">
                 <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
                 <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <input type="hidden" name="fields[reply_to]" value="">
                 <button type="submit">Отправить</button>
             </form>
         </div>
