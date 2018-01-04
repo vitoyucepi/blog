@@ -1,6 +1,6 @@
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
-        {% assign comments= comments | append: site.data.comments[post.slug] | where_exp:"item", "true" %}
+        {% assign comments = site.data.comments[post.slug] | where_exp:"item", "true" | sort "timestamp" %}
     {% endif %}
 {% endfor %}
 {{ comments |inspect }}
