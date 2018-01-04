@@ -197,6 +197,7 @@ body {
 .response {
     color: #0274BE;
     margin-top: 12px;
+    cursor: pointer;
 }
 
 .opener {
