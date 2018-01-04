@@ -212,22 +212,22 @@ body {
     display: block;
 }
 
-div[class*="level"] {
+.comment[class*="level"] {
     margin-left: 20%;
 }
 
-.level1 {
-margin-left: 0;
+.comment.level1 {
+    margin-left: 0 !important;
 }
 
-.level2 {
-margin-left: 5%;
+.comment.level2 {
+    margin-left: 5% !important;
 }
 
-.level3 {
-margin-left: 10%;
+.comment.level3 {
+    margin-left: 10% !important;
 }
 
-.level4 {
-margin-left: 15%;
+.comment.level4 {
+    margin-left: 15% !important;
 }
