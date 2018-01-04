@@ -43,7 +43,7 @@ test sub <br />
         {% assign name=comment.name %}
         {% assign timestamp=comment.timestamp %}
         {% assign message=comment.message %}
-        {% assign replty_to=comment.reply_to %}
+        {% assign reply_to=comment.reply_to %}
         include begin <br />
         {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to=reply_to %}
         include end <br />
