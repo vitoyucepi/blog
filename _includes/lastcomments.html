@@ -2,7 +2,7 @@
     {% if site.data.comments[post.slug] %}
         {% assign localcomments = site.data.comments[post.slug] %}
         {% if comments %}
-            {% assign comments = comments | concat: localcomments %}
+            {% assign comments = comments %}
         {% else %}
             {% assign comments = site.data.comments[post.slug] %}
         {% endif %}
@@ -10,3 +10,8 @@
 {% endfor %}
 {{ comments | inspect }}
 
+{% assign fruits = "apples, oranges, peaches, tomatoes" | split: ", " %}
+{% assign vegetables = "broccoli, carrots, lettuce, tomatoes" | split: ", " %}
+
+{% assign plants = fruits | concat: vegetables %}
+{{ plants | join: ", " }}
