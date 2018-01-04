@@ -31,7 +31,12 @@ layout: default
             {% if comments %}
                 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == empty" | sort: 'timestamp' %}
                 {% for comment in comments %}
-                    {% include comment.html index=forloop.index email=comment.email name=comment.name timestamp=comment.timestamp message=comment.message %}
+                    {% assign index=forloop.index %}
+                    {% assign email=comment.email %}
+                    {% assign name=comment.name %}
+                    {% assign timestamp=comment.timestamp %}
+                    {% assign message=comment.message %}
+                    {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to="" %}
                 {% endfor %}
             {% endif %}
             <h1>Комментировать</h1>

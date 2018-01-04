@@ -1,3 +1,4 @@
+{% assign id={{include.reply_to}}-{{ include.index }} %}
 <div class="comment">
     <img class="avatar" src="https://www.gravatar.com/avatar/{{ email | default: '' | escape }}?s=80&d=monsterid" />
     <div class="commentbody">
@@ -6,8 +7,8 @@
             <div class="commentdate">{{ include.timestamp | date: "%d %B %Y" | escape }}</div>
         </div>
         <div class="commentmessage">{{ include.message | escape }}</div>
-        <label class="response" for="{{ include.index }}">Ответить</label>
-        <input type="checkbox" id="{{ include.index }}" class="opener">
+        <label class="response" for="{{ id }}">Ответить</label>
+        <input type="checkbox" id="{{ id }}" class="opener">
         <div class="responseform">
             <h3>Комментировать</h3>
             <form class="commentform" method="post" action="https://api.staticman.net/v2/entry/vitoyucepi/vitoyucepi.github.io/master/comments">
@@ -16,7 +17,7 @@
                 <input placeholder="E-mail (укажите эл. почту или jabber для отображения уникального аватара)" type="text" name="fields[email]" spellcheck="false">
                 <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
                 <input type="hidden" name="options[slug]" value="{{ page.slug }}">
-                <input type="hidden" name="fields[reply_to]" value="{{ include.index }}">
+                <input type="hidden" name="fields[reply_to]" value="{{ id }}">
                 <button type="submit">Отправить</button>
             </form>
         </div>
@@ -24,5 +25,10 @@
 </div>
 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == include.index" | sort: 'timestamp' %}
 {% for comment in comments %}
-    {% include comment.html index=forloop.index email=comment.email name=comment.name timestamp=comment.timestamp message=comment.message %}
+    {% assign index=forloop.index %}
+    {% assign email=comment.email %}
+    {% assign name=comment.name %}
+    {% assign timestamp=comment.timestamp %}
+    {% assign message=comment.message %}
+    {% include comment.html index=index email=email name=name timestamp=timestamp message=message %}
 {% endfor %}
