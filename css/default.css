@@ -255,7 +255,7 @@ body {
 
 .lastcommentsitem {
     list-style-type: square;
-    margin: 7px 0 0 17px;
+    margin: 0 0 7px 17px;
 }
 
 .sidebaritem:nth-child(n+2) {
