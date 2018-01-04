@@ -212,22 +212,22 @@ body {
     display: block;
 }
 
+div[class*="level"] {
+    margin-left: 20%;
+}
+
 .level1 {
-    margin-left: 0;
+margin-left: 0;
 }
 
 .level2 {
-    margin-left: 5%;
+margin-left: 5%;
 }
 
 .level3 {
-    margin-left: 10%;
+margin-left: 10%;
 }
 
 .level4 {
-    margin-left: 15%;
-}
-
-div[class*="level"] {
-    margin-left: 20%;
+margin-left: 15%;
 }
