@@ -10,5 +10,8 @@ layout: default
             {% capture updates %}{% include updates.md %}{% endcapture %}
             {{ updates | markdownify }}
         </div>
+        <div class="sidebaritem">
+            {% capture lastcomments %}{% include lastcomments.html %}{% endcapture %}
+        </div>
     </div>
 </div>
