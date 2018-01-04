@@ -28,16 +28,15 @@ id: {{ id }}<br />
 </div>
 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == id" | sort: 'timestamp' %}
 subcomments: {{ comments | inspect }} <br />
-{% if comments.size > 0 %}
-    {% for comment in comments %}
-        subid: {{ id }} <br />
-        subcomment: {{ comment | inspect }} <br />
-        {% assign index=forloop.index %}
-        subindex: {{ index }} <br />
-        {% assign email=comment.email %}
-        {% assign name=comment.name %}
-        {% assign timestamp=comment.timestamp %}
-        {% assign message=comment.message %}
-        {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to=id %}
-    {% endfor %}
-{% endif %}
+subcomments size: {{ comments.size }} <br />
+{% for comment in comments %}
+    subid: {{ id }} <br />
+    subcomment: {{ comment | inspect }} <br />
+    {% assign index=forloop.index %}
+    subindex: {{ index }} <br />
+    {% assign email=comment.email %}
+    {% assign name=comment.name %}
+    {% assign timestamp=comment.timestamp %}
+    {% assign message=comment.message %}
+    {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to=id %}
+{% endfor %}
