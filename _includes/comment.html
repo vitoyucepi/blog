@@ -1,4 +1,4 @@
-{% assign id=include.reply_to | prepend: "-" | prepend: include.index %}
+{% assign id=include.reply_to | append: "-" | append: include.index %}
 <div class="comment">
     <img class="avatar" src="https://www.gravatar.com/avatar/{{ email | default: '' | escape }}?s=80&d=monsterid" />
     <div class="commentbody">
