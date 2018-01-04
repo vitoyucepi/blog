@@ -231,3 +231,8 @@ body {
 .comment.level4 {
     margin-left: 15% !important;
 }
+
+.sidebaritem .lastcommentslist {
+    margin: 0;
+    padding: 0;
+}
