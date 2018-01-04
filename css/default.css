@@ -232,7 +232,7 @@ body {
     margin-left: 15% !important;
 }
 
-.sidebaritem .lastcommentslist {
+.sidebaritem #lastcommentslist {
     margin: 0;
     padding: 0;
 }
