@@ -4,7 +4,7 @@
     <div class="commentbody">
         <div class="commentheader">
             <div class="commentauthor">{{ include.name | default: "Аноним" | escape }}</div>
-            <div class="commentdate">{{ include.timestamp | date: "%d %B %Y" | escape }}</div>
+            <div class="commentdate">{{ include.timestamp | date: "%e %B %Y" | escape }}</div>
         </div>
         <div class="commentmessage">{{ include.message | escape }}</div>
         <label class="response" for="{{ id }}">Ответить</label>

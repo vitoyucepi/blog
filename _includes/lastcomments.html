@@ -4,5 +4,14 @@
         {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
-{{ comments | sort: "timestamp" | inspect }}
-
+{% for comment in comments limit:5 %}
+    <ul>
+        <li>
+            <span class="commentavatar"><img src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=24&d=monsterid"></span>
+            <span class="commentauthor">{{ comment.name | escape }}</span>
+            <span class="commentdate">{{ comment.timestamp | date " %e %B %Y в %H:%M"}}</span>
+            <span class="commentlink"> на <a href=""></a></span>
+            <span class="commentexcerpt"></span>
+        </li>
+    </ul>
+{% endfor %}

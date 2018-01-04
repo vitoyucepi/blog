@@ -25,7 +25,7 @@ layout: main
             <div class="postheader">
                 <h1><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a></h1>
                 <div class="postauthor"><i class="fa fa-user"></i>{{ post.author }}</div>
-                <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%d %B %Y" }}</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%e %B %Y" }}</div>
                 <div class="postcomments"><i class="fa fa-comments"></i>{{ result }}</div>
                 <a href="{{ site.baseurl | append: post.url }}">
                     <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
