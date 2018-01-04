@@ -29,6 +29,7 @@
     {{ id }}
     {{ comment | inspect }}
     {% assign index=forloop.index %}
+    {{ index }}
     {% assign email=comment.email %}
     {% assign name=comment.name %}
     {% assign timestamp=comment.timestamp %}
