@@ -5,9 +5,10 @@
     {% endif %}
 {% endfor %}
 {% if comments != empty %}
+    {% assign comments = comments | sort: "timestamp" %}
     <h3>Последние комментарии</h3>
     <ul id="lastcommentslist">
-    {% for comment in comments | sort: "timestamp" limit:5 %}
+    {% for comment in comments limit:5 %}
             <li class="lastcommentsitem">
                 <span class="commentavatar"><img src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=24&d=monsterid"></span>
                 <span class="commentauthor">{{ comment.name | default: "Аноним" | escape }}</span>
