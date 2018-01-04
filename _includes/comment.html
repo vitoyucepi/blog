@@ -26,6 +26,8 @@
 </div>
 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == id" | sort: 'timestamp' %}
 {% for comment in comments %}
+    {{ id }}
+    {{ comments | inspect }}
     {% assign index=forloop.index %}
     {% assign email=comment.email %}
     {% assign name=comment.name %}
