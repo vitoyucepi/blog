@@ -37,6 +37,7 @@ layout: default
                     {% assign timestamp=comment.timestamp %}
                     {% assign message=comment.message %}
                     {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to="" %}
+                    mainloop<br>
                 {% endfor %}
             {% endif %}
             <h1>Комментировать</h1>
