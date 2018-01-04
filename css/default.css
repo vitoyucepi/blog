@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     background: #eee;
     font-family: sans-serif;
+    color: #444;
 }
 
 #header {
@@ -92,6 +93,7 @@ body {
 
 .postheader {
     margin-bottom: 30px;
+    color: #AAA;
 }
 
 .postheader div {
@@ -169,6 +171,13 @@ body {
     flex: 1 100%;
 }
 
+.response {
+}
+
+.responseform > h3 {
+    margin: 30px 0 0 0;
+}
+
 .commentauthor,
 .commentdate {
     display: inline;
@@ -183,4 +192,12 @@ body {
     word-break: break-all;
     /*noinspection CssInvalidPropertyValue*/
     word-break: break-word;
+}
+
+.openrt ~ .responseform {
+    display: none;
+}
+
+.opener:checked ~ .responseform {
+    display: block;
 }

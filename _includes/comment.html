@@ -6,10 +6,11 @@
             <div class="commentdate">{{ include.timestamp | date: "%d %B %Y" | escape }}</div>
         </div>
         <div class="commentmessage">{{ include.message | escape }}</div>
-        <div class="response">Ответить</div>
-        <div class="response-form" style="display: none">
-            <h1>Комментировать</h1>
-            <form class="comment-form" method="post" action="https://api.staticman.net/v2/entry/vitoyucepi/vitoyucepi.github.io/master/comments">
+        <label class="response" for="{{ include.index }}">Ответить</label>
+        <input type="checkbox" id="{{ include.index }}" class="opener">
+        <div class="response-form">
+            <h3>Комментировать</h3>
+            <form class="commentform" method="post" action="https://api.staticman.net/v2/entry/vitoyucepi/vitoyucepi.github.io/master/comments">
                 <textarea placeholder="Текст комментария" rows="6" name="fields[message]" required spellcheck="true"></textarea>
                 <input placeholder="Имя" type="text" name="fields[name]" spellcheck="false">
                 <input placeholder="E-mail (укажите эл. почту или jabber для отображения уникального аватара)" type="text" name="fields[email]" spellcheck="false">
