@@ -248,12 +248,14 @@ body {
 }
 
 .lastcommentsitem .commentavatar {
+    height: 24px;
     padding-right: 4px;
     float: left;
 }
 
 .lastcommentsitem {
     list-style-type: square;
+    margin: 17px 0 7px 0;
 }
 
 .sidebaritem:nth-child(n+2) {
