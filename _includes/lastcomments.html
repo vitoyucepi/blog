@@ -1,7 +1,8 @@
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
         {% if comments %}
-            {% assign comments = site.data.comments[post.slug] %}
+            {% assign tmp = comments | concat: site.data.comments[post.slug] %}
+            {% assign comments = tmp %}
         {% else %}
             {% assign comments = site.data.comments[post.slug] %}
         {% endif %}
