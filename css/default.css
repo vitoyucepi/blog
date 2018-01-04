@@ -165,6 +165,10 @@ body {
     margin: 7px 12px 0 0;
 }
 
+.commentbody {
+    flex: 1 100%;
+}
+
 .commentauthor,
 .commentdate {
     display: inline;
