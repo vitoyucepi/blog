@@ -1,8 +1,8 @@
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
+        {% assign localcomments = site.data.comments[post.slug] %}
         {% if comments %}
-            {% assign tmp = site.data.comments[post.slug] %}
-            {% assign comments = tmp %}
+            {% assign comments = comments | concat: localcomments %}
         {% else %}
             {% assign comments = site.data.comments[post.slug] %}
         {% endif %}
