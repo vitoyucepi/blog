@@ -8,7 +8,7 @@
 {% for comment in comments limit:5 %}
         <li class="lastcommentsitem">
             <span class="commentavatar"><img src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=24&d=monsterid"></span>
-            <span class="commentauthor">{{ comment.name | default "Аноним" | escape }}</span>
+            <span class="commentauthor">{{ comment.name | default: "Аноним" | escape }}</span>
             <span class="commentdate">{{ comment.timestamp | date: " %e %B %Y в %H:%M"}}</span>
             <span class="commentlink"> на <a href="{{ site.baseurl }}">Новый год — новый блог</a></span>
             <span class="commentexcerpt">{{ comment.message | truncate: 160 | escape}}</span>

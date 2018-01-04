@@ -10,6 +10,7 @@ body {
     background: #eee;
     font-family: sans-serif;
     color: #444;
+    line-height: 1.5;
 }
 
 #header {
@@ -244,6 +245,14 @@ body {
 
 .lastcommentsitem .commentexcerpt {
     display: block;
+}
+
+.lastcommentsitem .commentavatar {
+    float: left;
+}
+
+.lastcommentsitem {
+    list-style-type: square;
 }
 
 .sidebaritem:nth-child(n+2) {
