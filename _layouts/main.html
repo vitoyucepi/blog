@@ -11,7 +11,7 @@ layout: default
             {{ updates | markdownify }}
         </div>
         <div class="sidebaritem">
-            {% capture lastcomments %}{{ site | inspect }}{% endcapture %}
+            {% capture lastcomments %}{% include lastcomments.html %}{% endcapture %}
         </div>
     </div>
 </div>
