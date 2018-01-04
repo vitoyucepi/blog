@@ -132,19 +132,19 @@ body {
     margin-top: 0;
 }
 
-.comment-form {
+.commentform {
     display: flex;
     flex-direction: column;
 }
 
-.comment-form > * {
+.commentform > * {
     margin: 12px 0;
     padding: 12px;
     border: 1px solid #E4E4E4;
     font-size: 14px;
 }
 
-.comment-form > button {
+.commentform > button {
     background: #0274BE;
     color: #FFF;
     align-self: flex-end;
@@ -153,7 +153,7 @@ body {
     border-radius: 3px;
 }
 
-.comment-form > button:hover {
+.commentform > button:hover {
     background: #222;
 }
 
