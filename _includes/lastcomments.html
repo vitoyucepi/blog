@@ -1,3 +1,4 @@
+{% assign comments=[] %}
 {% for post in site.posts %}
     {% assign comments = comments | concat: site.data.comments[post.slug] }}
     {{ site.data.comments[post.slug] | inspect }}
