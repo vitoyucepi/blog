@@ -1,8 +1,10 @@
-{% assign comments = "" | split: "," %}
-{{ comments | inspect }}
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
-        {% assign comments = site.data.comments[post.slug] %}
+        {% if comments %}
+            {% assign comments = comments| concat: site.data.comments[post.slug] %}
+        {% else %}
+            {% assign comments = site.data.comments[post.slug] %}
+        {% endif %}
     {% endif %}
 {% endfor %}
 {{ comments | inspect }}
