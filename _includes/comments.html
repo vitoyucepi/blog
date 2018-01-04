@@ -1,0 +1,26 @@
+<div class="comment">
+    <img class="avatar" src="https://www.gravatar.com/avatar/{{ email | default: '' | escape }}?s=80&d=monsterid" />
+    <div class="commentbody">
+        <div class="commentheader">
+            <div class="commentauthor">{{ name | default: "Аноним" | escape }}</div>
+            <div class="commentdate">{{ timestamp | date: "%d %B %Y" | escape }}</div>
+        </div>
+        <div class="commentmessage">{{ message | escape }}</div>
+        <div class="response">Ответить</div>
+        <div class="response-form">
+            <form id="comment-form" method="post" action="https://api.staticman.net/v2/entry/vitoyucepi/vitoyucepi.github.io/master/comments">
+                <textarea placeholder="Текст комментария" rows="6" name="fields[message]" required spellcheck="true"></textarea>
+                <input placeholder="Имя" type="text" name="fields[name]" spellcheck="false">
+                <input placeholder="E-mail (укажите эл. почту или jabber для отображения уникального аватара)" type="text" name="fields[email]" spellcheck="false">
+                <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
+                <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <input type="hidden" name="fields[reply_to]" value="{{index}}">
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == index" | sort: 'timestamp' %}
+{% for comment in comments %}
+    {% include comment.html index=forloop.index email=comment.email name=comment.name timestamp=comment.timestamp message=comment.message %}
+{% endfor %}
