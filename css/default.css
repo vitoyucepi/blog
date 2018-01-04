@@ -246,6 +246,6 @@ body {
     display: block;
 }
 
-#sidebar:nth-child(n+2) {
+.sidebaritem:nth-child(n+2) {
     margin-top: 30px;
 }
