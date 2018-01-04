@@ -248,6 +248,7 @@ body {
 }
 
 .lastcommentsitem .commentavatar {
+    padding-right: 4px;
     float: left;
 }
 
