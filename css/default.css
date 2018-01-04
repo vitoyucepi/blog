@@ -50,8 +50,7 @@ body {
 }
 
 #page {
-
-    flex-grow: 1;
+    flex: 1 100%;
 }
 
 #container {
