@@ -1,4 +1,4 @@
-{% assign id={{include.reply_to}}-{{ include.index }} %}
+{% assign id=include.reply_to | prepend: "-" | prepend: include.index %}
 <div class="comment">
     <img class="avatar" src="https://www.gravatar.com/avatar/{{ email | default: '' | escape }}?s=80&d=monsterid" />
     <div class="commentbody">
@@ -23,12 +23,12 @@
         </div>
     </div>
 </div>
-{% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == include.index" | sort: 'timestamp' %}
+{% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == id" | sort: 'timestamp' %}
 {% for comment in comments %}
     {% assign index=forloop.index %}
     {% assign email=comment.email %}
     {% assign name=comment.name %}
     {% assign timestamp=comment.timestamp %}
     {% assign message=comment.message %}
-    {% include comment.html index=index email=email name=name timestamp=timestamp message=message %}
+    {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to=id %}
 {% endfor %}
