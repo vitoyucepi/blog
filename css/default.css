@@ -192,11 +192,11 @@ body {
     word-break: break-all;
     /*noinspection CssInvalidPropertyValue*/
     word-break: break-word;
+    margin-bottom: 12px;
 }
 
 .response {
     color: #0274BE;
-    margin-top: 12px;
     cursor: pointer;
 }
 
