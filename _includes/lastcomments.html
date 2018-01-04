@@ -1,7 +1,7 @@
 
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
-        {% assign comments = comments | append: site.data.comments[post.slug] %}
+        {% assign comments = site.data.comments[post.slug] %}
     {% endif %}
 {% endfor %}
 {{ comments | sort: 'timestamp'}}
