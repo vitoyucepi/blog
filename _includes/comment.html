@@ -27,6 +27,7 @@ id: {{ id }}<br />
     </div>
 </div>
 {% assign comments = site.data.comments[page.slug] | where_exp:"item", "item.reply_to == id" | sort: 'timestamp' %}
+subcomments: {{ comments | inspect }}
 {% for comment in comments %}
     subid: {{ id }} <br />
     subcomment: {{ comment | inspect }} <br />
