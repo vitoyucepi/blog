@@ -228,6 +228,6 @@ body {
     margin-left: 15%;
 }
 
-div[class^="level"] {
+div[class*="level"] {
     margin-left: 20%;
 }
