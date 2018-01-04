@@ -214,21 +214,21 @@ body {
 }
 
 .level1 {
-    margin-left: 100px;
+    margin-left: 0;
 }
 
 .level2 {
-    margin-left: 200px;
+    margin-left: 5%;
 }
 
 .level3 {
-    margin-left: 300px;
+    margin-left: 10%;
 }
 
 .level4 {
-    margin-left: 400px;
+    margin-left: 15%;
 }
 
 div[class^="level"] {
-    margin-left: 500px;
+    margin-left: 20%;
 }
