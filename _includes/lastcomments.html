@@ -1,15 +1,8 @@
-
-{% assign fruits = "apples, oranges, peaches, tomatoes" | split: ", " %}
-{% assign vegetables = "broccoli, carrots, lettuce, tomatoes" | split: ", " %}
-
-{% assign plants = fruits | concat: vegetables %}
-
-{{ plants | join: ", " }}
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
         {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
         {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
-{{ comments | inspect }}
+{{ comments | sort: "timestamp" | inspect }}
 
