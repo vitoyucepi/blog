@@ -212,3 +212,23 @@ body {
 .opener:checked ~ .responseform {
     display: block;
 }
+
+.level1 {
+    margin-left: 100px;
+}
+
+.level2 {
+    margin-left: 200px;
+}
+
+.level3 {
+    margin-left: 300px;
+}
+
+.level4 {
+    margin-left: 400px;
+}
+
+div[class^="level"] {
+    margin-left: 500px;
+}
