@@ -1,4 +1,5 @@
 {% assign id=include.reply_to | append: "-" | append: include.index %}
+{{ id }}
 <div class="comment level{{ id.size | divided_by: 2 }}">
     <img class="avatar" src="https://www.gravatar.com/avatar/{{ email | default: '' | escape }}?s=80&d=monsterid" />
     <div class="commentbody">
