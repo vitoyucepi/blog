@@ -3,5 +3,5 @@
         {% assign comments = comments | concat: site.data.comments[post.slug] %}
     {% endif %}
 {% endfor %}
-{{ comments | where_exp:"item", "true" | sort "timestamp" | inspect }}
+{{ comments | inspect }}
 
