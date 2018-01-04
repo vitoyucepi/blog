@@ -7,12 +7,8 @@
 {{ plants | join: ", " }}
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
-        {% assign localcomments = site.data.comments[post.slug] %}
-        {% if comments %}
-            {% assign comments = comments | concat: vegetables %}
-        {% else %}
-            {% assign comments = site.data.comments[post.slug] %}
-        {% endif %}
+        {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
+        {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
 {{ comments | inspect }}
