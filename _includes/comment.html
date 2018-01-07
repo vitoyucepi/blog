@@ -31,6 +31,6 @@
     {% assign timestamp=comment.timestamp %}
     {% assign message=comment.message %}
     {% assign reply_to=comment.reply_to %}
-    {% assign uid=comment.uid %}
+    {% assign uid=comment._id %}
     {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to=reply_to uid=uid %}
 {% endfor %}

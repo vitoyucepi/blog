@@ -36,7 +36,7 @@ layout: default
                     {% assign name=comment.name %}
                     {% assign timestamp=comment.timestamp %}
                     {% assign message=comment.message %}
-                    {% assign uid=comment.uid %}
+                    {% assign uid=comment._id %}
                     {% include comment.html index=index email=email name=name timestamp=timestamp message=message reply_to="" uid=uid %}
                 {% endfor %}
             {% endif %}
