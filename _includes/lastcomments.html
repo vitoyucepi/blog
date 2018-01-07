@@ -4,10 +4,11 @@
         {% for comment in localcomments %}
             {% assign comment.url = post.url %}
             {% assign comment.title = post.title %}
+            {{ comment | inspect }}
         {% endfor %}
     {% endif %}
 {% endfor %}
-{% if comments != empty %}
+{% if comments %}
     {% assign comments = comments | sort: "timestamp" | reverse %}
     <h3>Последние комментарии</h3>
     <ul id="lastcommentslist">
