@@ -9,11 +9,16 @@
     <h3>Последние комментарии</h3>
     <ul id="lastcommentslist">
     {% for comment in comments limit:5 %}
+        {% for post in site.posts %}
+            {% if site.data.comments[post.slug] %}
+                {{ site.data.comments[post.slug].1._id }}
+            {% endif %}
+        {% endfor %}
             <li class="lastcommentsitem">
                 <span class="commentavatar"><img src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=24&d=monsterid"></span>
                 <span class="commentauthor">{{ comment.name | default: "Аноним" | escape }}</span>
                 <span class="commentdate">{{ comment.timestamp | date: " %e %B %Y в %H:%M"}}</span>
-                <span class="commentlink"> на <a href="{{ site.baseurl | append: comment.url }}">{{ comment.title }}</a></span>
+                <span class="commentlink"> на <a href="{{ site.baseurl | append: url }}">{{ title }}</a></span>
                 <span class="commentexcerpt">{{ comment.message | truncate: 160 | escape}}</span>
             </li>
     {% endfor %}
