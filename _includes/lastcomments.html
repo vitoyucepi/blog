@@ -1,6 +1,7 @@
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
         {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
+        {{ localcomments | inspect }}
         {% for comment in localcomments %}
             {% assign comment.url = post.url %}
             {% assign comment.title = post.title %}
