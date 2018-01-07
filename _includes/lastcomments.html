@@ -1,7 +1,10 @@
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
         {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
-        {{ localcomments | inspect }} < br />
+        {% for comment in localcomments %}
+            {% assign localcomment[forloop.index].url = post.url %}
+            {% assign localcomment[forloop.index].title = post.title %}
+        {% endfor %}
         {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
@@ -14,7 +17,7 @@
                 <span class="commentavatar"><img src="https://www.gravatar.com/avatar/{{ comment.email | default: '' | escape }}?s=24&d=monsterid"></span>
                 <span class="commentauthor">{{ comment.name | default: "Аноним" | escape }}</span>
                 <span class="commentdate">{{ comment.timestamp | date: " %e %B %Y в %H:%M"}}</span>
-                <span class="commentlink"> на <a href="{{ site.baseurl }}">Новый год — новый блог</a></span>
+                <span class="commentlink"> на <a href="{{ site.baseurl | append: comment.url }}">{{ comment.title }}</a></span>
                 <span class="commentexcerpt">{{ comment.message | truncate: 160 | escape}}</span>
             </li>
     {% endfor %}
