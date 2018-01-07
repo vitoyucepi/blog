@@ -4,7 +4,7 @@
         {% for comment in localcomments %}
             {% assign comment.url = post.url %}
             {% assign comment.title = post.title %}
-            {% assign comments = comments | push: comment %}
+            {{ comment | inspect }}
         {% endfor %}
     {% endif %}
 {% endfor %}
