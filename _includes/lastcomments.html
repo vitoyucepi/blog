@@ -5,6 +5,7 @@
             {% assign localcomment[forloop.index].url = post.url %}
             {% assign localcomment[forloop.index].title = post.title %}
         {% endfor %}
+        {{ localcomments | inspect }}
         {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
