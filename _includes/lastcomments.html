@@ -2,11 +2,10 @@
     {% if site.data.comments[post.slug] %}
         {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
         {% for comment in localcomments %}
-            {% assign localcomment[forloop.index].url = post.url %}
-            {% assign localcomment[forloop.index].title = post.title %}
+            {% assign comment.url = post.url %}
+            {% assign comment.title = post.title %}
+            {% assign comments = comments | concat: comment %}
         {% endfor %}
-        {{ localcomments | inspect }}
-        {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
 {% if comments != empty %}
