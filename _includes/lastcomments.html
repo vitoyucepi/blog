@@ -11,7 +11,13 @@
     {% for comment in comments limit:5 %}
         {% for post in site.posts %}
             {% if site.data.comments[post.slug] %}
-                {{ site.data.comments[post.slug] | inspect }}
+                {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
+                {% for item in localcomments %}
+                    {% if item._id == comment._id %}
+                        {% assign url = post.url %}
+                        {% assign title = post.title %}
+                    {% endif %}
+                {% endfor %}
             {% endif %}
         {% endfor %}
             <li class="lastcommentsitem">
