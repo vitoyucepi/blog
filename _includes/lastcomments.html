@@ -1,16 +1,11 @@
 {% for post in site.posts %}
     {% if site.data.comments[post.slug] %}
         {% assign localcomments = site.data.comments[post.slug] | where_exp: "item", "true" %}
-        {{ localcomments | inspect }}
-        {% for comment in localcomments %}
-            {% assign comment.url = post.url %}
-            {% assign comment.title = post.title %}
-            {{ comment | inspect }}
-        {% endfor %}
+        {% assign comments = comments | concat: localcomments %}
     {% endif %}
 {% endfor %}
 {% if comments %}
-    {% assign comments = comments | sort: "timestamp" | reverse %}
+    {% assign comments = comments | sort: "timestamp" %}
     <h3>Последние комментарии</h3>
     <ul id="lastcommentslist">
     {% for comment in comments limit:5 %}
