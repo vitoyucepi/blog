@@ -11,7 +11,7 @@
     {% for comment in comments limit:5 %}
         {% for post in site.posts %}
             {% if site.data.comments[post.slug] %}
-                {{ site.data.comments[post.slug][1] | inspect }}
+                {{ site.data.comments[post.slug] | inspect }}
             {% endif %}
         {% endfor %}
             <li class="lastcommentsitem">
