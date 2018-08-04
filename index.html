@@ -27,9 +27,11 @@ layout: main
                 <div class="postauthor"><i class="fa fa-user"></i>{{ post.author | escape }}</div>
                 <div class="postdate"><i class="fa fa-calendar"></i>{{ post.date | date: "%e %B %Y" }}</div>
                 <div class="postcomments"><i class="fa fa-comments"></i>{{ result }}</div>
-                <a href="{{ site.baseurl | append: post.url }}">
-                    <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
-                </a>
+                {% if post.image %}
+                    <a href="{{ site.baseurl | append: post.url }}">
+                        <img class="postimage" src="{{ site.baseurl }}/{{ post.image }}">
+                    </a>
+                {% endif %}
             </div>
             <div class="postcontent">
                 {{ post.pretext | strip | escape }} ...
