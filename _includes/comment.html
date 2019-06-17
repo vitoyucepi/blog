@@ -6,7 +6,7 @@
             <div class="commentauthor">{{ include.name | default: "Аноним" | escape }}</div>
             <div class="commentdate">{{ include.timestamp | date: "%e %B %Y" | escape }}</div>
         </div>
-        <div class="commentmessage">{{ include.message | escape }}</div>
+        <div class="commentmessage">{{ include.message | markdownify }}</div>
         <label class="response" for="{{ id }}">Ответить</label>
         <input type="checkbox" id="{{ id }}" class="opener">
         <div class="responseform">
